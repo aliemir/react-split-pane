@@ -302,6 +302,7 @@ class SplitPane extends React.Component {
       height: '100%',
       position: 'fixed',
       zIndex: 100,
+      opacity: 0,
     };
 
     const pane1Classes = ['Pane1', paneClassName, pane1ClassName].join(' ');
