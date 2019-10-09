@@ -297,6 +297,13 @@ class SplitPane extends React.Component {
     const pane1Style = { ...paneStyle, ...pane1StyleProps };
     const pane2Style = { ...paneStyle, ...pane2StyleProps };
 
+    const mouseEventBlockerStyle = {
+      width: '100%',
+      height: '100%',
+      position: 'fixed',
+      zIndex: 100,
+    };
+
     const pane1Classes = ['Pane1', paneClassName, pane1ClassName].join(' ');
     const pane2Classes = ['Pane2', paneClassName, pane2ClassName].join(' ');
 
@@ -308,6 +315,7 @@ class SplitPane extends React.Component {
         }}
         style={style}
       >
+        {this.state.active && <div style={mouseEventBlockerStyle} />}
         <Pane
           className={pane1Classes}
           key="pane1"
